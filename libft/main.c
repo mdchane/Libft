@@ -68,7 +68,7 @@ int		main(int argc, char **argv)
 //ft_strlcat
 	char s9[6] = "salut";
 	char s9b[4] = "toi";
-	printf("strlcat(%s, %s) : %d\n", s9, s9b, ft_strlcat(s9, s9b, 2));
+	printf("strlcat(%s, %s) : %d\n", s9, s9b, ft_strlcat(s9, s9b, 10));
 	printf("str appendé par strlcat : %s\n", s9);
 	printf("--------------------------------\n");
 
@@ -78,6 +78,11 @@ int		main(int argc, char **argv)
 	printf("--------------------------------\n");
 
 
+//ft_strchr
+	char c = 'b';
+	printf("ft_strchr(%s, %d) : %c\n", s9, c, *ft_strchr(s9, c));
+	printf("strchr(%s, %d) : %c\n", s9, c, *strchr(s9, c));
+	printf("--------------------------------\n");
 
 
 
