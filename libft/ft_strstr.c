@@ -6,7 +6,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 	size_t	j;
 
 	if(s2 == NULL || s2[0] == '\0')
-		return (s1);
+		return (char *)(s1);
 	i = 0;
 	while(s1[i] != '\0')
 	{
@@ -18,7 +18,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 				j++;
 			}
 			if(s2[j] == '\0')
-				return (s1 + i);
+				return (char *)(s1 + i);
 		}
 		i++;
 	}

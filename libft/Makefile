@@ -3,7 +3,7 @@ SRCS = *.c
 OBJS = *.o
 
 all:
-	gcc $(SRCS) -o $(NAME)
+	gcc -Wall $(SRCS) -o $(NAME)
 	./$(NAME)
 
 clean:
