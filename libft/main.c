@@ -79,15 +79,36 @@ int		main(int argc, char **argv)
 
 
 //ft_strchr
-	char c = 'b';
-	printf("ft_strchr(%s, %d) : %c\n", s9, c, *ft_strchr(s9, c));
-	printf("strchr(%s, %d) : %c\n", s9, c, *strchr(s9, c));
+	char *s10 = "salut";
+	char c = 'l';
+	printf("ft_strchr(%s, %d) : %p\n", s10, c, ft_strchr(s10, c));
+	printf("strchr(%s, %d) : %p\n", s10, c, strchr(s10, c));
 	printf("--------------------------------\n");
 
+//ft_strrchr
+	char *s10b = "salutl";
+	char d = 'l';
+	printf("ft_strchr(%s, %d) : %p\n", s10b, d, ft_strchr(s10b, d));
+	printf("ft_strrchr(%s, %d) : %p\n", s10b, d, ft_strrchr(s10b, d));
+	printf("strrchr(%s, %d) : %p\n", s10b, d, strrchr(s10b, d));
+	printf("--------------------------------\n");
 
+//memset
+	char	p[7] = "memset";
+	int		cm = '*';
+	size_t	n = 2;
+	printf("p : %s\n", p);
+	memset(p, cm, n);
+	printf("memset(p, %c, %d) : %s\n", cm, n, p);
+	ft_memset(p, 's', n);
+	printf("ft_memset(p, %c, %d) : %s\n", 's', n, p);
 
-
-
+//bzero
+	char	p1[6] = "bzero";
+	size_t	n1 = 3;
+	printf("p1 : %s\n", p1);
+	ft_bzero(p, n1);
+	printf("p1 : %s\n", p1);
 
 
 	return (0);
