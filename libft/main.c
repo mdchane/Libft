@@ -102,13 +102,63 @@ int		main(int argc, char **argv)
 	printf("memset(p, %c, %d) : %s\n", cm, n, p);
 	ft_memset(p, 's', n);
 	printf("ft_memset(p, %c, %d) : %s\n", 's', n, p);
+	printf("--------------------------------\n");
 
 //bzero
 	char	p1[6] = "bzero";
 	size_t	n1 = 3;
 	printf("p1 : %s\n", p1);
-	ft_bzero(p, n1);
-	printf("p1 : %s\n", p1);
+	bzero(p1, n1);
+	printf("bzero(p1, n1): %s\n", p1);
+	char	p2[6] = "bzero";
+	printf("p2 : %s\n", p2);
+	ft_bzero(p2, n1);
+	printf("ft_bzero(p2, n1): %s\n", p2);
+	printf("--------------------------------\n");
+
+//memcpy
+	char	p3[5] = "damn";
+	char	p4[5] = "helo";
+	size_t	n2 = 3;
+	printf("p3 : %s & p4 : %s\n", p3, p4);
+	ft_memcpy(p4, p3, n2);
+	printf("ft_memcpy(p4, p3,  %d) => p3 : %s & p4 : %s\n", n2, p3, p4);
+	printf("--------------------------------\n");
+
+//memccpy
+	char	det[] = "saluttoi";
+	char	*dest = det;
+	char	*src = det;
+
+	memcpy(dest + 3, dest, 3);
+	printf("memcpy : %s\n", dest);
+	ft_memcpy(src + 3, src, 3);
+	printf("ft_memcpy %s\n", src);
+	printf("--------------------------------\n");
+
+	char	det1[] = "saluttoi";
+	char	*dest1 = det1;
+	char	*src1 = det1;
+
+	memmove(dest1 + 3, dest1, 3);
+	printf("memmove %s\n", dest1);
+	ft_memmove(src1 + 3, src1, 3);
+	printf("ft_memmove %s\n", src1);
+	printf("--------------------------------\n");
+
+//memchr
+	char	p5[] = "lafac";
+	c = 'c';
+	n = 5;
+	printf("memchr(%s, %c, %d) : %p\n", p5, c, n, memchr(p5, c, n));
+	printf("ft_memchr(%s, %c, %d) : %p\n", p5, c, n, ft_memchr(p5, c, n));
+	printf("--------------------------------\n");
+
+//memcmp
+	char	p6[] = "ladac";
+	printf("memcmp(%s, %s, %d) : %d\n", p5, p6, n, memcmp(p5, p6, n));
+	printf("ft_memcmp(%s, %s, %d) : %d\n", p5, p6, n, ft_memcmp(p5, p6, n));
+	printf("--------------------------------\n");
 
 
 	return (0);
