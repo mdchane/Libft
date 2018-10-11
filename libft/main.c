@@ -1,5 +1,6 @@
 #include "libft.h"
 #include <stdio.h>
+#include <ctype.h>
 
 int		main(int argc, char **argv)
 {
@@ -160,6 +161,23 @@ int		main(int argc, char **argv)
 	printf("ft_memcmp(%s, %s, %d) : %d\n", p5, p6, n, ft_memcmp(p5, p6, n));
 	printf("--------------------------------\n");
 
+//atoi
+	char	p7[] = "-98986";
+	printf("atoi(%s) = %d\n", p7, atoi(p7));
+	printf("ft_atoi(%s) = %d\n", p7, ft_atoi(p7));
+
+//isalpha
+	int		i = 'Z';
+	printf("ft_isalpha(%c) : %d\n", i, ft_isalpha(i));
+	printf("ft_isdigit(%c) : %d\n", i, ft_isdigit(i));
+	printf("ft_isalnum(%c) : %d\n", i, ft_isalnum(i));
+	printf("ft_isprint(%c) : %d\n", i, ft_isprint(i));
+	printf("ft_isascii(%c) : %d\n", i, ft_isascii(i));
+
+	int		i2 = 'j';
+	printf("ft_tolower(%c) : %c\n", i, ft_tolower(i));
+	printf("ft_toupper(%c) : %c\n", i2, ft_toupper(i2));
+	printf("--------------------------------\n");
 
 	return (0);
 }
