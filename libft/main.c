@@ -179,5 +179,40 @@ int		main(int argc, char **argv)
 	printf("ft_toupper(%c) : %c\n", i2, ft_toupper(i2));
 	printf("--------------------------------\n");
 
+//memalloc
+	char	*ptr;
+	printf("ptr : %p\n", ptr);
+	ptr = ft_memalloc(0);
+	printf("after memalloc ->ptr : %p : %s\n", ptr, ptr);
+	printf("--------------------------------\n");
+
+//memdell
+	void	**ptr1;
+	printf("ptr1 : %p & *ptr1 : %p\n", ptr1, *ptr1);
+	//ft_memdel(ptr1);
+	//printf("ptr1 : %p\n", ptr1);
+	printf("--------------------------------\n");
+
+//strnew
+	char	t[] = "hello";
+	char	*t1 = t;
+	printf("t1 : adr %p,  %s\n", t, t1);
+	t1 = ft_strnew(2);
+	printf("t1 :adr %p,  %s\n", t1, t1);
+	ft_strdel(&t1);
+	printf("t1 :adr %p,  %s\n", t1, t1);
+	printf("--------------------------------\n");
+
+//strclr
+	char	t2[] = "hello";
+	printf("t2 : %s\n", t2);
+	ft_strclr(t2);
+	printf("t2 : %s\n", t2);
+
+
+
+
+
+
 	return (0);
 }
