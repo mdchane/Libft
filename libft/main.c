@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <unistd.h>
 #include <stdio.h>
 #include <ctype.h>
 
@@ -69,7 +70,7 @@ int		main(int argc, char **argv)
 //ft_strlcat
 	char s9[6] = "salut";
 	char s9b[4] = "toi";
-	printf("strlcat(%s, %s) : %d\n", s9, s9b, ft_strlcat(s9, s9b, 10));
+	printf("strlcat(%s, %s) : %ld\n", s9, s9b, ft_strlcat(s9, s9b, 10));
 	printf("str appendé par strlcat : %s\n", s9);
 	printf("--------------------------------\n");
 
@@ -100,9 +101,9 @@ int		main(int argc, char **argv)
 	size_t	n = 2;
 	printf("p : %s\n", p);
 	memset(p, cm, n);
-	printf("memset(p, %c, %d) : %s\n", cm, n, p);
+	printf("memset(p, %c, %ld) : %s\n", cm, n, p);
 	ft_memset(p, 's', n);
-	printf("ft_memset(p, %c, %d) : %s\n", 's', n, p);
+	printf("ft_memset(p, %c, %ld) : %s\n", 's', n, p);
 	printf("--------------------------------\n");
 
 //bzero
@@ -123,7 +124,7 @@ int		main(int argc, char **argv)
 	size_t	n2 = 3;
 	printf("p3 : %s & p4 : %s\n", p3, p4);
 	ft_memcpy(p4, p3, n2);
-	printf("ft_memcpy(p4, p3,  %d) => p3 : %s & p4 : %s\n", n2, p3, p4);
+	printf("ft_memcpy(p4, p3,  %ld) => p3 : %s & p4 : %s\n", n2, p3, p4);
 	printf("--------------------------------\n");
 
 //memccpy
@@ -151,14 +152,14 @@ int		main(int argc, char **argv)
 	char	p5[] = "lafac";
 	c = 'c';
 	n = 5;
-	printf("memchr(%s, %c, %d) : %p\n", p5, c, n, memchr(p5, c, n));
-	printf("ft_memchr(%s, %c, %d) : %p\n", p5, c, n, ft_memchr(p5, c, n));
+	printf("memchr(%s, %c, %ld) : %p\n", p5, c, n, memchr(p5, c, n));
+	printf("ft_memchr(%s, %c, %ld) : %p\n", p5, c, n, ft_memchr(p5, c, n));
 	printf("--------------------------------\n");
 
 //memcmp
 	char	p6[] = "ladac";
-	printf("memcmp(%s, %s, %d) : %d\n", p5, p6, n, memcmp(p5, p6, n));
-	printf("ft_memcmp(%s, %s, %d) : %d\n", p5, p6, n, ft_memcmp(p5, p6, n));
+	printf("memcmp(%s, %s, %ld) : %d\n", p5, p6, n, memcmp(p5, p6, n));
+	printf("ft_memcmp(%s, %s, %ld) : %d\n", p5, p6, n, ft_memcmp(p5, p6, n));
 	printf("--------------------------------\n");
 
 //atoi
@@ -180,26 +181,30 @@ int		main(int argc, char **argv)
 	printf("--------------------------------\n");
 
 //memalloc
-	char	*ptr;
+	void	*ptr;
 	printf("ptr : %p\n", ptr);
 	ptr = ft_memalloc(0);
-	printf("after memalloc ->ptr : %p : %s\n", ptr, ptr);
+	printf("after memalloc\n");
+	printf("ptr : %p : %s\n", ptr, ptr);
 	printf("--------------------------------\n");
 
 //memdell
-	void	**ptr1;
+	void	**ptr1 = &ptr;
 	printf("ptr1 : %p & *ptr1 : %p\n", ptr1, *ptr1);
-	//ft_memdel(ptr1);
-	//printf("ptr1 : %p\n", ptr1);
+	ft_memdel(ptr1);
+	printf("after memdell\n");
+	printf("ptr1 : %p & *ptr1 : %p\n", ptr1, *ptr1);
 	printf("--------------------------------\n");
 
 //strnew
 	char	t[] = "hello";
 	char	*t1 = t;
-	printf("t1 : adr %p,  %s\n", t, t1);
+	printf("t1: adr %p,  %s\n", t, t1);
 	t1 = ft_strnew(2);
-	printf("t1 :adr %p,  %s\n", t1, t1);
+	printf("t1 = ft_strnew(2)\n");
+	printf("t1: adr %p,  %s\n", t1, t1);
 	ft_strdel(&t1);
+	printf("ft_strdel(&t1)\n");
 	printf("t1 :adr %p,  %s\n", t1, t1);
 	printf("--------------------------------\n");
 
@@ -207,11 +212,30 @@ int		main(int argc, char **argv)
 	char	t2[] = "hello";
 	printf("t2 : %s\n", t2);
 	ft_strclr(t2);
+	printf("ft_strclr(t2)\n");
 	printf("t2 : %s\n", t2);
+	printf("--------------------------------\n");
 
+//striter
+void	f1(char *c)
+{
+	write(1, c, 1);
+}
+	char	t3[] = "SaLUt CommENt";
+	printf("t3 : %s\n", t3);
+	printf("ft_striter(t3, &f1)\n");
+	ft_striter(t3, &f1);
+	printf("\n--------------------------------\n");
 
-
-
+//striteri
+void	f2(unsigned int i, char *c)
+{
+	printf("(i: %d = %c) //", i, *c);
+}
+	printf("t3 : %s\n", t3);
+	printf("ft_striteri(t3, &f2)\n");
+	ft_striteri(t3, &f2);
+	printf("\n--------------------------------\n");
 
 
 	return (0);
