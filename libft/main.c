@@ -49,7 +49,7 @@ int		main(int argc, char **argv)
 	printf("strncmp(%s, %s) : %d\n", str5, str6, strncmp(str5, str6, 2));
 	printf("--------------------------------\n");
 
-//ft_strcat
+	//ft_strcat
 
 	char s7[6] = "salut";
 	char s7b[6] = "salut";
@@ -58,7 +58,7 @@ int		main(int argc, char **argv)
 	printf("strcat(%s, %s) : %s\n", s7b, s7c, strcat(s7b, s7c));
 	printf("--------------------------------\n");
 
-//ft_strncat
+	//ft_strncat
 
 	char s8[7] = "coucou";
 	char s8b[30] = "coucou";
@@ -67,27 +67,27 @@ int		main(int argc, char **argv)
 	printf("strcat(%s, %s) : %s\n", s8b, s8c, strcat(s8b, s8c));
 	printf("--------------------------------\n");
 
-//ft_strlcat
+	//ft_strlcat
 	char s9[6] = "salut";
 	char s9b[4] = "toi";
 	printf("strlcat(%s, %s) : %ld\n", s9, s9b, ft_strlcat(s9, s9b, 10));
 	printf("str appendé par strlcat : %s\n", s9);
 	printf("--------------------------------\n");
 
-//ft_strdup
+	//ft_strdup
 	printf("ft_strdup(s10, %s) : %s\n", s9b, ft_strdup(s9b));
 	printf("strdup(s10b, %s) : %s\n", s9b, ft_strdup(s9b));
 	printf("--------------------------------\n");
 
 
-//ft_strchr
+	//ft_strchr
 	char *s10 = "salut";
 	char c = 'l';
 	printf("ft_strchr(%s, %d) : %p\n", s10, c, ft_strchr(s10, c));
 	printf("strchr(%s, %d) : %p\n", s10, c, strchr(s10, c));
 	printf("--------------------------------\n");
 
-//ft_strrchr
+	//ft_strrchr
 	char *s10b = "salutl";
 	char d = 'l';
 	printf("ft_strchr(%s, %d) : %p\n", s10b, d, ft_strchr(s10b, d));
@@ -95,7 +95,7 @@ int		main(int argc, char **argv)
 	printf("strrchr(%s, %d) : %p\n", s10b, d, strrchr(s10b, d));
 	printf("--------------------------------\n");
 
-//memset
+	//memset
 	char	p[7] = "memset";
 	int		cm = '*';
 	size_t	n = 2;
@@ -106,7 +106,7 @@ int		main(int argc, char **argv)
 	printf("ft_memset(p, %c, %ld) : %s\n", 's', n, p);
 	printf("--------------------------------\n");
 
-//bzero
+	//bzero
 	char	p1[6] = "bzero";
 	size_t	n1 = 3;
 	printf("p1 : %s\n", p1);
@@ -118,7 +118,7 @@ int		main(int argc, char **argv)
 	printf("ft_bzero(p2, n1): %s\n", p2);
 	printf("--------------------------------\n");
 
-//memcpy
+	//memcpy
 	char	p3[5] = "damn";
 	char	p4[5] = "helo";
 	size_t	n2 = 3;
@@ -127,7 +127,7 @@ int		main(int argc, char **argv)
 	printf("ft_memcpy(p4, p3,  %ld) => p3 : %s & p4 : %s\n", n2, p3, p4);
 	printf("--------------------------------\n");
 
-//memccpy
+	//memccpy
 	char	det[] = "saluttoi";
 	char	*dest = det;
 	char	*src = det;
@@ -148,7 +148,7 @@ int		main(int argc, char **argv)
 	printf("ft_memmove %s\n", src1);
 	printf("--------------------------------\n");
 
-//memchr
+	//memchr
 	char	p5[] = "lafac";
 	c = 'c';
 	n = 5;
@@ -156,18 +156,18 @@ int		main(int argc, char **argv)
 	printf("ft_memchr(%s, %c, %ld) : %p\n", p5, c, n, ft_memchr(p5, c, n));
 	printf("--------------------------------\n");
 
-//memcmp
+	//memcmp
 	char	p6[] = "ladac";
 	printf("memcmp(%s, %s, %ld) : %d\n", p5, p6, n, memcmp(p5, p6, n));
 	printf("ft_memcmp(%s, %s, %ld) : %d\n", p5, p6, n, ft_memcmp(p5, p6, n));
 	printf("--------------------------------\n");
 
-//atoi
+	//atoi
 	char	p7[] = "-98986";
 	printf("atoi(%s) = %d\n", p7, atoi(p7));
 	printf("ft_atoi(%s) = %d\n", p7, ft_atoi(p7));
 
-//isalpha
+	//isalpha
 	int		i = 'Z';
 	printf("ft_isalpha(%c) : %d\n", i, ft_isalpha(i));
 	printf("ft_isdigit(%c) : %d\n", i, ft_isdigit(i));
@@ -180,7 +180,7 @@ int		main(int argc, char **argv)
 	printf("ft_toupper(%c) : %c\n", i2, ft_toupper(i2));
 	printf("--------------------------------\n");
 
-//memalloc
+	//memalloc
 	void	*ptr;
 	printf("ptr : %p\n", ptr);
 	ptr = ft_memalloc(0);
@@ -188,7 +188,7 @@ int		main(int argc, char **argv)
 	printf("ptr : %p : %s\n", ptr, ptr);
 	printf("--------------------------------\n");
 
-//memdell
+	//memdell
 	void	**ptr1 = &ptr;
 	printf("ptr1 : %p & *ptr1 : %p\n", ptr1, *ptr1);
 	ft_memdel(ptr1);
@@ -196,7 +196,7 @@ int		main(int argc, char **argv)
 	printf("ptr1 : %p & *ptr1 : %p\n", ptr1, *ptr1);
 	printf("--------------------------------\n");
 
-//strnew
+	//strnew
 	char	t[] = "hello";
 	char	*t1 = t;
 	printf("t1: adr %p,  %s\n", t, t1);
@@ -208,7 +208,7 @@ int		main(int argc, char **argv)
 	printf("t1 :adr %p,  %s\n", t1, t1);
 	printf("--------------------------------\n");
 
-//strclr
+	//strclr
 	char	t2[] = "hello";
 	printf("t2 : %s\n", t2);
 	ft_strclr(t2);
@@ -216,26 +216,64 @@ int		main(int argc, char **argv)
 	printf("t2 : %s\n", t2);
 	printf("--------------------------------\n");
 
-//striter
-void	f1(char *c)
-{
-	write(1, c, 1);
-}
+	//striter
+	void	f1(char *c)
+	{
+		write(1, c, 1);
+	}
 	char	t3[] = "SaLUt CommENt";
 	printf("t3 : %s\n", t3);
 	printf("ft_striter(t3, &f1)\n");
 	ft_striter(t3, &f1);
 	printf("\n--------------------------------\n");
 
-//striteri
-void	f2(unsigned int i, char *c)
-{
-	printf("(i: %d = %c) //", i, *c);
-}
+	//striteri
+	void	f2(unsigned int i, char *c)
+	{
+		printf("(i: %d = %c) //", i, *c);
+	}
 	printf("t3 : %s\n", t3);
 	printf("ft_striteri(t3, &f2)\n");
 	ft_striteri(t3, &f2);
 	printf("\n--------------------------------\n");
+
+//strmap
+	char	f3(char c) 
+	{
+		if (c >= 'a' && c <= 'z')
+			return (c - 32);
+		return (c);
+	}
+	printf("t3 : %s\n", t3);
+	printf("ft_strmap(t3, &ft_toupper) : %s\n", ft_strmap(t3, &f3));
+	printf("\n--------------------------------\n");
+//strmapi
+	char	f4(unsigned int i, char c) 
+	{
+		if (c >= 'a' && c <= 'z')
+			return (c - 32);
+		return (c + (i%2));
+	}
+	printf("t3 : %s\n", t3);
+	printf("ft_strmap(t3, &ft_toupper) : %s\n", ft_strmapi(t3, &f4));
+	printf("\n--------------------------------\n");
+
+//strequ
+	char	t4[] = "salut";
+	char	t5[] = "salu";
+	size_t	n6 = 3;
+
+	printf("t4 : %s et t5 : %s\n", t4, t5);
+	printf("strequ : %d\n", ft_strequ(t4, t5));
+	printf("strenqu with n = %ld: %d\n", n6,  ft_strnequ(t4, t5, n6));
+	printf("\n--------------------------------\n");
+
+
+
+
+
+
+
 
 
 	return (0);
