@@ -269,11 +269,12 @@ int		main(int argc, char **argv)
 	printf("\n--------------------------------\n");
 
 
-
-
-
-
-
+//ft_strsub
+	char	t6[6] = "salut";
+	printf("ft_strsub(t6, 3, 2) = %s\n", ft_strsub(t6, 3, 2));
+//ft_strjoin
+	char	t7[7] = "coucou";
+	printf("ft_strjoin t4 & t5 = %s\n", ft_strjoin(t6, t7));
 
 
 	return (0);
