@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 10:33:35 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/10 10:33:36 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/10 12:23:26 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 
-	if (!s)
+	if (!s )
 		return (NULL);
 	sub = ft_strnew(len + 1);
 	if (!sub)

@@ -306,7 +306,8 @@ int		main(int argc, char **argv)
 	printf("\n--------------------------------\n");
 
 //ft_strtrim
-
+	char	t8[] = "       hello world     ";
+	printf("t8 = $%s$\nAfter ft_strtrim = $%s$\n", t8, ft_strtrim(t8));
 
 	return (0);
 }

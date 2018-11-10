@@ -1,7 +1,11 @@
 #ifndef FT_H
 # define FT_H
- #include <stdlib.h>
  #include <string.h>
+ # include <sys/types.h>
+ # include <sys/uio.h>
+ # include <unistd.h>
+ # include <stdlib.h>
+
  size_t				ft_strlen(const char *s);
  char				*ft_strdup(const char *s1);
  char				*ft_strcpy(char *dest, const char *src);
@@ -55,5 +59,5 @@
  void				ft_putchar_fd(char c, int fd);
  void				ft_putstr_fd(char const *s, int fd);
  void				ft_putendl_fd(char const *s, int fd);
- void	ft_putnbr_fd(int n, int fd);
+ void				ft_putnbr_fd(int n, int fd);
 #endif
