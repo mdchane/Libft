@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 09:12:27 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/12 11:35:13 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/12 15:46:11 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_count_words(char const *s, char c)
 	return (words);
 }
 
-int		ft_len_word(char const *s, char c)
+int		ft_len(char const *s, char c)
 {
 	int		i;
 
@@ -78,7 +78,7 @@ char	**ft_strsplit(char const *s, char c)
 	while (j < ft_count_words(s, c))
 	{
 		i = ft_escape(s, i, c);
-		if (!(tab[j] = (char *)malloc(sizeof(char) * (ft_len_word(s + i, c) + 1))))
+		if (!(tab[j] = (char *)malloc(sizeof(char) * (ft_len(s + i, c) + 1))))
 		{
 			free_tab((void **)tab, j);
 			return (NULL);

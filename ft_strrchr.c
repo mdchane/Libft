@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 09:16:00 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/10 09:16:02 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/12 15:43:52 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ char	*ft_strrchr(const char *s, int c)
 	if (s[i] == '\0' && c == '\0')
 		return (char *)(&s[i]);
 	else if (s[i] == '\0' && last > -1)
-			return (char *)(&s[last]);
+		return (char *)(&s[last]);
 	return (NULL);
 }
