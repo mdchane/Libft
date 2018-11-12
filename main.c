@@ -324,6 +324,8 @@ int		main()
 	printf("itoa = %s\n", ft_itoa(-2147483648));
 	printf("\n--------------------------------\n");
 
+//ft_putnbr
+	ft_putnbr(14464);
 
 	return (0);
 }

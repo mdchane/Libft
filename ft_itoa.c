@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 11:25:13 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/12 14:31:32 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/12 16:08:43 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int		ft_num_len(int n)
 {
-	int	len;
+	int		len;
 
+	len = 0;
 	if (n < 0)
 	{
 		n *= -1;
@@ -55,7 +56,6 @@ char	*ft_itoa(int n)
 {
 	char	*res;
 	int		len;
-	int		i;
 	int		pow;
 
 	if (n == -2147483648)
