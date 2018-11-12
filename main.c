@@ -24,7 +24,7 @@ char	f4(unsigned int i, char c)
 	return (c + (i%2));
 }
 
-int		main(int argc, char **argv)
+int		main()
 {
 	char str1[7] = "salut";
 	char str2[7] = "coucou";
@@ -308,6 +308,16 @@ int		main(int argc, char **argv)
 //ft_strtrim
 	char	t8[] = "       hello world     ";
 	printf("t8 = $%s$\nAfter ft_strtrim = $%s$\n", t8, ft_strtrim(t8));
+
+//ft_strsplit
+	int		k=0;
+	char	**tab;
+	tab = ft_strsplit("*salut*les***etudiants*", '*');
+	while (tab[k])
+	{
+		printf("tab[%d] = %s\n", k, tab[i]);
+		k++;
+	}
 
 	return (0);
 }

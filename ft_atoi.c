@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 08:39:58 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/10 08:58:35 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/12 09:18:48 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		res;
-	int		sign;
+	int			i;
+	long long	res;
+	int			sign;
 
 	sign = 1;
 	i = 0;
@@ -34,5 +34,5 @@ int	ft_atoi(const char *nptr)
 		res = res * 10 + nptr[i] - '0';
 		i++;
 	}
-	return (res * sign);
+	return (int)(res * sign);
 }
