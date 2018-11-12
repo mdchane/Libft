@@ -308,6 +308,7 @@ int		main()
 //ft_strtrim
 	char	t8[] = "       hello world     ";
 	printf("t8 = $%s$\nAfter ft_strtrim = $%s$\n", t8, ft_strtrim(t8));
+	printf("\n--------------------------------\n");
 
 //ft_strsplit
 	int		k=0;
@@ -318,6 +319,11 @@ int		main()
 		printf("tab[%d] = %s\n", k, tab[i]);
 		k++;
 	}
+	printf("\n--------------------------------\n");
+//ft_itoa
+	printf("itoa = %s\n", ft_itoa(-2147483648));
+	printf("\n--------------------------------\n");
+
 
 	return (0);
 }

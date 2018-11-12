@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 12:45:07 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/10 12:45:12 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/12 14:28:24 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+int					ft_pow_len(int num_len);
 #endif

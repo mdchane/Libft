@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_pow_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 14:06:41 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/12 14:35:48 by mdchane          ###   ########.fr       */
+/*   Created: 2018/11/12 14:30:31 by mdchane           #+#    #+#             */
+/*   Updated: 2018/11/12 14:35:19 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+int		ft_pow_len(int num_len)
 {
-	int		pow;
+	int		i;
 
-	pow = ft_pow_len(n);
-	while (n > 0)
+	i = 1;
+	while (num_len > 1)
 	{
-		ft_putchar(n / pow + 48);
-		n = n % pow;
-		pow /= 10;
+		i *= 10;
+		num_len--;
 	}
+	return (i);
 }
