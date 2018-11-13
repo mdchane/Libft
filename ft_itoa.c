@@ -5,65 +5,83 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 11:25:13 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/12 16:08:43 by mdchane          ###   ########.fr       */
+/*   Created: 2018/11/13 14:21:17 by mdchane           #+#    #+#             */
+/*   Updated: 2018/11/13 14:21:46 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_num_len(int n)
+int		ft_len_num(long long n)
 {
-	int		len;
+	int	len;
 
+	if (n == 0)
+		return (1);
 	len = 0;
 	if (n < 0)
 	{
-		n *= -1;
 		len++;
+		n = n * -1;
 	}
-	len = 0;
 	while (n > 0)
 	{
-		n /= 10;
+		n = n / 10;
 		len++;
 	}
 	return (len);
 }
 
-void	ft_transform(char *res, int n, int pow)
+int		ft_pow(int len)
 {
+	int		pow;
 	int		i;
+
+	i = 0;
+	pow = 1;
+	while (i < len - 1)
+	{
+		pow = pow * 10;
+		i++;
+	}
+	return (pow);
+}
+
+void	ft_solve(char *res, long long n, int len)
+{
+	int			pow;
+	int			i;
 
 	i = 0;
 	if (n < 0)
 	{
-		res[0] = '-';
-		n *= -1;
+		res[i] = '-';
 		i++;
+		len--;
+		n = n * -1;
 	}
-	while (pow > 0)
+	pow = ft_pow(len);
+	while (len > 0)
 	{
 		res[i] = n / pow + 48;
 		n = n % pow;
-		pow /= 10;
+		pow = pow / 10;
+		len--;
 		i++;
 	}
 	res[i] = '\0';
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int nbr)
 {
-	char	*res;
-	int		len;
-	int		pow;
+	char		*res;
+	int			len;
+	long long	n;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	len = ft_num_len(n);
-	if (!(res = (char *)malloc(sizeof(char) * (ft_num_len(n) + 1))))
+	n = nbr;
+	len = ft_len_num(n);
+	if (!(res = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	pow = ft_pow_len(len);
-	ft_transform(res, n, pow);
+	ft_solve(res, n, len);
 	return (res);
 }
