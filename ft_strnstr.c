@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 09:21:34 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/12 15:44:32 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/13 09:39:25 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		if (s1[i] == s2[0])
 		{
 			j = 0;
-			while (s1[i + j] == s2[j] && s2[j] != '\0' && s1[i + j] != '\0')
+			while (s1[i + j] == s2[j] && s2[j] && s1[i + j] && i < n)
 			{
 				j++;
 			}
-			if (s2[j] == '\0')
-				return (char *)(s1 + i);
+			if (j == ft_strlen(s2))
+				return ((char *)s1 + i);
 		}
 		i++;
 	}
