@@ -6,7 +6,7 @@
 #    By: mdchane <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/10 08:36:51 by mdchane           #+#    #+#              #
-#    Updated: 2018/11/12 16:14:13 by mdchane          ###   ########.fr        #
+#    Updated: 2018/11/13 16:14:50 by mdchane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ SRCS = ft_atoi.c\
 	   ft_strtrim.c\
 	   ft_tolower.c\
 	   ft_toupper.c\
+	   ft_pow_len.c
 
 OBJS = $(SRCS:.c=.o)
 
