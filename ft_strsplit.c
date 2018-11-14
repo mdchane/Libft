@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 09:12:27 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/12 15:46:11 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/14 09:50:33 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,6 @@ int		ft_escape(char const *s, int i, char c)
 	return (i);
 }
 
-int		ft_count_words(char const *s, char c)
-{
-	int		i;
-	int		words;
-	int		flag;
-
-	words = 0;
-	i = 0;
-	while (s[i])
-	{
-		flag = 0;
-		while (s[i] != c)
-		{
-			flag = 1;
-			i++;
-		}
-		if (flag == 1)
-			words++;
-		i++;
-	}
-	return (words);
-}
-
 int		ft_len(char const *s, char c)
 {
 	int		i;
@@ -50,6 +27,27 @@ int		ft_len(char const *s, char c)
 	while (s[i] != c && s[i])
 		i++;
 	return (i);
+}
+
+int		ft_count_words(char const *s, char c)
+{
+	int		i;
+	int		words;
+
+	words = 0;
+	i = 0;
+	while (s[i])
+	{
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i])
+		{
+			while (s[i] != c && s[i])
+				i++;
+			words++;
+		}
+	}
+	return (words);
 }
 
 void	free_tab(void **tab, int max)
