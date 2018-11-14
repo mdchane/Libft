@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 12:45:07 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/14 10:04:51 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/14 10:44:56 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 typedef struct		s_list
 {
-	void	*content;
-	size_t	content_size;
-	struct	s_list *next;
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
 }					t_list;
 
 size_t				ft_strlen(const char *s);

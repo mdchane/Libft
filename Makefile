@@ -6,7 +6,7 @@
 #    By: mdchane <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/10 08:36:51 by mdchane           #+#    #+#              #
-#    Updated: 2018/11/14 10:07:08 by mdchane          ###   ########.fr        #
+#    Updated: 2018/11/14 14:12:39 by mdchane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,12 @@ SRCS = ft_atoi.c\
 	   ft_strtrim.c\
 	   ft_tolower.c\
 	   ft_toupper.c\
+	   ft_lstnew.c\
+	   ft_lstdelone.c\
+	   ft_lstdel.c\
+	   ft_lstadd.c\
+	   ft_lstiter.c\
+	   ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -79,10 +85,10 @@ $(NAME):
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(NAME)
+	/bin/rm -f $(OBJS)
 
 fclean: clean
-	/bin/rm -f $(OBJS)
+	/bin/rm -f $(NAME)
 
 re: fclean all
 

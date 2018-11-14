@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 12:35:25 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/10 12:36:57 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/14 14:21:57 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr(char const *s)
 {
+	if (s == NULL)
+		return ;
 	while (*s)
 	{
 		ft_putchar(*s);

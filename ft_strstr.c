@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 09:17:21 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/10 09:24:49 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/14 14:41:58 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 	size_t	i;
 	size_t	j;
 
-	if (s2 == NULL || s2[0] == '\0')
+	if (*s2 == '\0')
 		return (char *)(s1);
 	i = 0;
 	while (s1[i] != '\0')

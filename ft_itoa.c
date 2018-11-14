@@ -6,13 +6,13 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 14:21:17 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/13 14:21:46 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/14 14:08:10 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_len_num(long long n)
+static int	ft_len_num(long long n)
 {
 	int	len;
 
@@ -32,7 +32,7 @@ int		ft_len_num(long long n)
 	return (len);
 }
 
-int		ft_pow(int len)
+static int	ft_pow(int len)
 {
 	int		pow;
 	int		i;
@@ -47,7 +47,7 @@ int		ft_pow(int len)
 	return (pow);
 }
 
-void	ft_solve(char *res, long long n, int len)
+static void	ft_solve(char *res, long long n, int len)
 {
 	int			pow;
 	int			i;
@@ -72,7 +72,7 @@ void	ft_solve(char *res, long long n, int len)
 	res[i] = '\0';
 }
 
-char	*ft_itoa(int nbr)
+char		*ft_itoa(int nbr)
 {
 	char		*res;
 	int			len;

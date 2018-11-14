@@ -6,20 +6,20 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 09:12:27 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/14 09:50:33 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/14 16:33:02 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_escape(char const *s, int i, char c)
+static int	ft_escape(char const *s, int i, char c)
 {
 	while (s[i] == c && s[i])
 		i++;
 	return (i);
 }
 
-int		ft_len(char const *s, char c)
+static int	ft_len(char const *s, char c)
 {
 	int		i;
 
@@ -29,7 +29,7 @@ int		ft_len(char const *s, char c)
 	return (i);
 }
 
-int		ft_count_words(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
 	int		i;
 	int		words;
@@ -50,25 +50,29 @@ int		ft_count_words(char const *s, char c)
 	return (words);
 }
 
-void	free_tab(void **tab, int max)
+static char	**free_tab(void ***tab, int max)
 {
 	int		i;
 
 	i = 0;
 	while (i < max)
 	{
-		ft_memdel(tab[i]);
+		ft_memdel((*tab)[i]);
+		i++;
 	}
-	ft_memdel(tab);
+	ft_memdel(*tab);
+	return (NULL);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		i;
 	int		j;
 	int		k;
 
+	if (s == NULL)
+		return (NULL);
 	if (!(tab = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1))))
 		return (NULL);
 	i = 0;
@@ -77,10 +81,7 @@ char	**ft_strsplit(char const *s, char c)
 	{
 		i = ft_escape(s, i, c);
 		if (!(tab[j] = (char *)malloc(sizeof(char) * (ft_len(s + i, c) + 1))))
-		{
-			free_tab((void **)tab, j);
-			return (NULL);
-		}
+			return (free_tab((void ***)&tab, j));
 		k = 0;
 		while (s[i] != c && s[i])
 			tab[j][k++] = s[i++];
