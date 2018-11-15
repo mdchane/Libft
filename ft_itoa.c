@@ -6,7 +6,7 @@
 /*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 14:21:17 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/14 14:08:10 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/15 09:32:55 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_len_num(long long n)
 	return (len);
 }
 
-static int	ft_pow(int len)
+static int	ft_10(int len)
 {
 	int		pow;
 	int		i;
@@ -60,7 +60,7 @@ static void	ft_solve(char *res, long long n, int len)
 		len--;
 		n = n * -1;
 	}
-	pow = ft_pow(len);
+	pow = ft_10(len);
 	while (len > 0)
 	{
 		res[i] = n / pow + 48;

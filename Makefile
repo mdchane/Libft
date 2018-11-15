@@ -6,7 +6,7 @@
 #    By: mdchane <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/10 08:36:51 by mdchane           #+#    #+#              #
-#    Updated: 2018/11/14 14:12:39 by mdchane          ###   ########.fr        #
+#    Updated: 2018/11/15 09:31:42 by mdchane          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,12 @@ SRCS = ft_atoi.c\
 	   ft_lstdel.c\
 	   ft_lstadd.c\
 	   ft_lstiter.c\
-	   ft_lstmap.c
+	   ft_lstmap.c\
+	   ft_isupper.c\
+	   ft_islower.c\
+	   ft_pow.c\
+	   ft_sqrt.c\
+	   ft_foreach.c
 
 OBJS = $(SRCS:.c=.o)
 
