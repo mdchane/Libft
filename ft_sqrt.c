@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdchane <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mdchane <mdchane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 10:22:04 by mdchane           #+#    #+#             */
-/*   Updated: 2018/11/15 09:28:50 by mdchane          ###   ########.fr       */
+/*   Updated: 2018/11/17 10:11:16 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_sqrt(int nb)
 		return (1);
 	if (nb < 0)
 		return (0);
-	while (i <= nb / 2)
+	while (i * i <= nb)
 	{
 		if (i * i == nb)
 			return (i);
