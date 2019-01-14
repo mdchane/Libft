@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdchane <mdchane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 12:35:25 by mdchane           #+#    #+#             */
-/*   Updated: 2019/01/08 11:24:55 by mdchane          ###   ########.fr       */
+/*   Created: 2018/12/26 11:07:15 by mdchane           #+#    #+#             */
+/*   Updated: 2018/12/26 11:07:30 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr(char const *s)
+int	put_n_char(char c, int n)
 {
-	if (s == NULL)
-		return (0);
-	return (write(1, s, ft_strlen(s)));
+	int		i;
+
+	i = -1;
+	while (++i < n)
+		ft_putchar(c);
+	return (i);
 }
