@@ -6,7 +6,7 @@
 /*   By: mdchane <mdchane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 12:45:07 by mdchane           #+#    #+#             */
-/*   Updated: 2019/03/11 16:08:09 by mdchane          ###   ########.fr       */
+/*   Updated: 2019/03/18 15:57:20 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include <stdint.h>
 # include "libftprintf.h"
 
-# define BUFF_SIZE 32
+# define BUFF_SIZE 218
 
 typedef struct		s_list
 {
