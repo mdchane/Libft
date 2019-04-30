@@ -6,7 +6,7 @@
 /*   By: mdchane <mdchane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 09:12:27 by mdchane           #+#    #+#             */
-/*   Updated: 2019/03/14 17:44:13 by mdchane          ###   ########.fr       */
+/*   Updated: 2019/04/22 16:18:53 by mdchane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_escape(char const *s, int i, char c)
 {
-	while (s[i] == c && s[i])
+	if (s[i] == c && s[i])
 		i++;
 	return (i);
 }
@@ -70,14 +70,16 @@ char		**ft_strsplit(char const *s, char c)
 	int		i;
 	int		j;
 	int		k;
+	int		cw;
 
 	if (s == NULL)
 		return (NULL);
-	if (!(tab = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1))))
+	cw = ft_count_words(s, c);
+	if (!(tab = (char **)malloc(sizeof(char *) * (cw + 1))))
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (j < ft_count_words(s, c))
+	j = -1;
+	while (++j < cw)
 	{
 		i = ft_escape(s, i, c);
 		if (!(tab[j] = (char *)malloc(sizeof(char) * (ft_len(s + i, c) + 1))))
@@ -86,7 +88,6 @@ char		**ft_strsplit(char const *s, char c)
 		while (s[i] != c && s[i])
 			tab[j][k++] = s[i++];
 		tab[j][k] = '\0';
-		j++;
 	}
 	tab[j] = NULL;
 	return (tab);

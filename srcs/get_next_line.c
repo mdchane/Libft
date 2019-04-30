@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdchane <mdchane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sarobber <sarobber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/09 15:08:04 by sarobber          #+#    #+#             */
-/*   Updated: 2019/03/19 08:41:28 by mdchane          ###   ########.fr       */
+/*   Updated: 2019/04/17 11:50:07 by sarobber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-# define MAX_FD 1025
-
 size_t	ft_strclen(char *keep)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (keep[i] != '\n' && keep[i] != '\0')
